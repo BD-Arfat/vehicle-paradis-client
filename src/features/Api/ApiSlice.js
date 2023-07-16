@@ -11,11 +11,23 @@ export const apiSlice = createApi({
             query: () => `/products`,
             providesTags: ['products']
         }),
+        getProduct: builder.query({
+            query: (id) => `/products/${id}`,
+            invalidatesTags : ['products']
+        }),
         addProduct: builder.mutation({
             query: (data) => ({
                 url: `/products`,
                 method: 'POST',
                 body: data
+            }),
+            invalidatesTags: ['products']
+        }),
+        editProduct: builder.mutation({
+            query: ({id, data}) => ({
+                url: `/products/${id}`,
+                method: 'PATCH',
+                body: data,
             }),
             invalidatesTags: ['products']
         })
@@ -24,4 +36,4 @@ export const apiSlice = createApi({
 
 });
 
-export const { useGetProductsQuery, useAddProductMutation } = apiSlice
+export const { useGetProductsQuery, useAddProductMutation, useGetProductQuery, useEditProductMutation } = apiSlice

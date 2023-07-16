@@ -3,6 +3,7 @@ import Main from "../Maine/Main";
 import Home from "../Home/Home/Home";
 import ProductsPages from "../ProductsPages/ProductsPages";
 import AddProduct from "../AddProduct/AddProduct";
+import EditsProducts from "../EditsProducts/EditsProducts";
 
 export const router = createBrowserRouter([
     {
@@ -20,6 +21,10 @@ export const router = createBrowserRouter([
             {
                 path : '/addProduct',
                 element : <AddProduct/>
+            },
+            {
+                path : '/products/edit/:productId',
+                element : <EditsProducts/>
             }
         ]
     }
