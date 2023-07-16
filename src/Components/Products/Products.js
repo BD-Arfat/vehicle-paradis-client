@@ -40,7 +40,7 @@ const Products = (props) => {
             {/* <div className='mt-10'>
                 <Inputs/>
             </div> */}
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:my-20 md:w-11/12 md:mx-auto'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10 md:my-20 md:w-11/12 md:mx-auto'>
                 {content}
             </div>
         </div>

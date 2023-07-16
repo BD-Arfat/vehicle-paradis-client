@@ -29,7 +29,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link to={'/addVideo'} className="btn btn-active items-cards text-black font-bold mr-5">+ AddVideo</Link>
+                <Link to={'/addProduct'} className="btn btn-active items-cards text-black font-bold mr-5">+ AddVideo</Link>
             </div>
         </div>
     );
