@@ -2,6 +2,33 @@
   text-align: center;
 }
 
+NavLink {
+  color: white;
+}
+
+.item-card {
+  box-shadow: inset -10px -10px 15px rgba(65, 3, 47, 0.5);
+}
+.items-cards{
+  box-shadow: inset -10px -10px 15px rgba(65, 3, 47, 0.5);
+}
+
+.contact-input{
+  box-shadow: inset -10px -10px 15px rgba(150, 19, 113, 0.5);
+  margin-top: 20px;
+}
+
+.item-card:hover {
+  transform: translateY(-5px);
+  box-shadow:inset -10px -10px 15px rgba(3, 3, 3, 0.5)
+}
+.delete-items{
+  box-shadow: inset -10px -10px 15px rgba(231, 12, 12, 0.5);
+}
+.edit-items{
+  box-shadow: inset -10px -10px 15px rgba(0, 157, 248, 0.5);
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -30,9 +57,11 @@
   0% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(10px);
   }
+
   100% {
     transform: translateY(0px);
   }
