@@ -12,7 +12,7 @@ const Inputs = () => {
 
     return (
         <div>
-            <div>
+            <div className='mt-10'>
                 <input onChange={inputHandler} type="text" placeholder="Type here" className="input input-bordered input-primary w-full md:w-96 " />
             </div>
             <div>

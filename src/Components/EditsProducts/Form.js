@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useEditProductMutation } from '../../features/Api/ApiSlice';
 import EditsProducts from './EditsProducts';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-hot-toast';
 
 const Form = ({product} ) => {
 
@@ -36,12 +37,13 @@ const Form = ({product} ) => {
                 price,
                 Description,
                 tag
-            }
+            },
+    
         });
     }
 
     useEffect(() => {
-        if (isSuccess) navigate('/products')
+        if (isSuccess) navigate('/products');
     }, [isSuccess, navigate])
 
 
