@@ -43,4 +43,4 @@ export const apiSlice = createApi({
 
 });
 
-export const { useGetProductsQuery, useAddProductMutation, useGetProductQuery, useDeleteProductMutation, useEditProductMutation } = apiSlice
+export const { useAddProductMutation, useGetProductQuery, useDeleteProductMutation, useEditProductMutation } = apiSlice

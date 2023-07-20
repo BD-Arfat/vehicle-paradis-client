@@ -12,7 +12,7 @@ const Form = () => {
     const [image, setImage] = useState('');
     const [price, setPrice] = useState('');
     const [Description, setDescription] = useState('');
-    const [tag, setTag] = useState('');
+    const [tags, setTag] = useState('');
 
     const resetForm = () =>{
         setDescription('');
@@ -31,7 +31,7 @@ const Form = () => {
             image,
             price,
             Description,
-            tag
+            tags
         });
         console.log(addProduct)
         resetForm();
@@ -86,7 +86,7 @@ const Form = () => {
                         <label className="label">
                             <span className="label-text">Tag</span>
                         </label>
-                        <input type="text" value={tag} onChange={(e)=>setTag(e.target.value)} required placeholder="tag" className="input input-bordered input-primary md:w-96" />
+                        <input type="text" value={tags} onChange={(e)=>setTag(e.target.value)} required placeholder="tag" className="input input-bordered input-primary md:w-96" />
                     </div>
                 </div>
                 <div className="form-control mt-6">

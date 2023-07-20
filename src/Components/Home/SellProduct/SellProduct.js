@@ -47,10 +47,10 @@ const SellProduct = () => {
         <div>
             <h1 className='md:mt-24 text-center font-bold md:text-5xl'>The products we sell</h1>
 
-            <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 mb-20 mt-20 md:w-11/12 md:mx-auto'>
+            <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 mb-20 md:w-11/12 md:mx-auto mt-20'>
                 {
                     items.map(item => <>
-                        <div  className="card w-full  md:w-96 md:h-[270px]  bg-base-100 s border-2 item-card ">
+                        <div  className="card w-full md:w-96 md:mx-auto  md:h-[270px]  bg-base-100  border-2 item-card ">
                             <figure className="px-10 pt-10">
                                 <img src={item.image} alt="Shoes" className="rounded-3xl mt-5 md:h-[100px]" />
                             </figure>

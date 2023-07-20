@@ -1,23 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Product from './Product';
-import { useGetProductsQuery } from '../../features/Api/ApiSlice';
-import Inputs from '../Input/Inputs';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchproducts } from '../../features/Products/ProductSlice';
 
-const Products = (props) => {
+const Products = () => {
 
 
-    const { data: products, isLoading, isError } = useGetProductsQuery();
+    const dispatech = useDispatch();
+    const { products, isError, isLoading } = useSelector((state) => state.products);
+    const {tags, search} = useSelector(state=> state.filter)
 
-    const filteredData = products?.filter((el) => {
-        //if no input the return the original
-        if (props?.input === '') {
-            return el;
-        }
-        //return the item which contains the user input
-        else {
-            return el.name.toLowerCase().includes(props?.input)
-        }
-    })
+    useEffect(() => {
+        dispatech(fetchproducts({tags, search}))
+    }, [dispatech, tags, search])
+
+
 
     let content = null;
     if (isLoading) {
@@ -30,9 +27,9 @@ const Products = (props) => {
         content = <p error='There was not found' />
     }
     if (!isLoading && !isError && products?.length > 0) {
-        content = filteredData.map(items => <Product key={
+        content = products.map(items => <Product key={
             items.id
-        } items={items} item={items.name}/>)
+        } items={items} item={items.name} />)
     }
 
     return (

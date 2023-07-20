@@ -1,23 +1,23 @@
 import React, { useState } from 'react';
 import Products from '../Products/Products';
+import { useDispatch, useSelector } from 'react-redux';
+import {searched} from '../../features/Filters/FilterSlices'
 
 const Inputs = () => {
+    const dispatch = useDispatch()
+    const {search} = useSelector(state => state.filter)
+    const [input, setInput] = useState(search);
 
-    const [inputText, setInputText] = useState("");
-    let inputHandler = (e) => {
-        //convert input text to lower case
-        var lowerCase = e.target.value.toLowerCase();
-        setInputText(lowerCase);
-    };
+    const handleSubmit = (e) =>{
+        e.preventDefault();
+        dispatch(searched(input))
+    }
 
     return (
-        <div>
-            <div className='mt-10'>
-                <input onChange={inputHandler} type="text" placeholder="Type here" className="input input-bordered input-primary w-full md:w-96 " />
-            </div>
-            <div>
-                <Products input={inputText}/>
-            </div>
+        <div className=''>
+            <form onSubmit={handleSubmit} className='ms-3'>
+                    <input onChange={(e)=> setInput(e.target.value)}  type="text" placeholder="Type here" className="input input-bordered input-primary w-full md:w-96 " />
+                </form>
         </div>
     );
 };
